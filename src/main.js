@@ -1,11 +1,10 @@
-import { title } from './assets/06.module.sass';
-import contentStoreData from './assets/contentStore.json'
+const modules = import.meta.glob('/src/utils-js/*.js')
 
-(function() {
-	const titleElement = document.querySelector('.title');
-	titleElement.className = title;
-	titleElement.textContent = contentStoreData.title
-
-	const descriptionElement = document.querySelector('.description')
-	descriptionElement.textContent = contentStoreData.description
-})();
+const currentUrlPage = document.location.href
+if(currentUrlPage === 'http://localhost:5173/') {
+	Object.values(modules).forEach((module) => {
+		module().then(() => {})
+	})
+} else if(currentUrlPage === 'http://localhost:5173/public') {
+	console.log('public');
+}
