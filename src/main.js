@@ -1,4 +1,3 @@
-import { heading as headingFontSize } from './assets/04a.module.css'
-import { heading as headingTextColor } from './assets/04b.module.css'
+import './assets/05.css'
 
-document.querySelector('.heading').classList = `${headingFontSize} ${headingTextColor}`
+document.querySelector('.heading').classList = `heading text-3xl font-bold underline`
