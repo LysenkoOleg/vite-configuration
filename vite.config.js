@@ -10,6 +10,7 @@ export default {
 		Inspect(),
 		checker({
 			typescript: true,
-		})
+		}),
 	],
+	envPrefix: 'APP_'
 }
