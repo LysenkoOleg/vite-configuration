@@ -1,10 +1,5 @@
-const modules = import.meta.glob('/src/utils-js/*.js')
+import { template } from '/src/12.jsx'
 
-const currentUrlPage = document.location.href
-if(currentUrlPage === 'http://localhost:5173/') {
-	Object.values(modules).forEach((module) => {
-		module().then(() => {})
-	})
-} else if(currentUrlPage === 'http://localhost:5173/public') {
-	console.log('public');
-}
+console.log(template);
+
+document.querySelector('body').append(template)
